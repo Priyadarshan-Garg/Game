@@ -27,7 +27,7 @@ int main(){
          }
          
          computerMove(spaces,computer);
-          drawBoard(spaces);
+         std::cout << "Bot's Move" << std:: endl;
           drawBoard(spaces);
          if (checkWinner(spaces,player,computer)){
             running = false;
@@ -38,8 +38,8 @@ int main(){
             running = false;
             break;
          }
-         std::cout<<"Thanks for Playing \n";
      }
+    std::cout<<"Thanks for Playing! \n";
     return 0;
 }
 void drawBoard(char *spaces){
@@ -59,15 +59,15 @@ void playerMove(char *spaces, char player){
     int number;
         do
         {
-            std::cout<<"Enter a Spot to place (1-9): ";
+            std::cout<<"Your Move: Enter a Spot to place (1-9): ";
             std::cin>>number;
             number--;
             if(spaces[number]== ' '){
                 spaces[number]=player;
                 break;
             }
-            /* code */
-        } while (!number<0 || !number>8);
+
+        } while (number<0 || number>8);
         
 }
 void computerMove(char *spaces, char computer){
@@ -120,8 +120,7 @@ bool checkTie(char * spaces){
             if(spaces[i]== ' '){
                 return false;
             }
-            std::cout<<"It's a Draw \n ";
         }
-        
+    std::cout<<"It's a Draw \n ";   
     return true;
 }
